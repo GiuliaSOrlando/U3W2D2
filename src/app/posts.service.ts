@@ -15,6 +15,7 @@ export class PostsService {
 
   constructor(private http: HttpClient) {}
   getPosts() {
+    console.log(this.url);
     return this.http.get(this.url);
   }
 }

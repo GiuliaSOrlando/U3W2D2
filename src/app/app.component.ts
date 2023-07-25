@@ -8,15 +8,14 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  posts: any
+  ngOnInit() {
+    this.service.getPosts().subscribe((posts) => {
+      this.posts = posts;
+    });
+  }
+  posts: any;
 
   constructor(private service: PostsService) {
-    ngOnInit() {
-      this.service.getPosts()
-        .subscribe(posts => {
-          this.posts = posts;
-        });
+    this.ngOnInit();
   }
-}
-
 }
