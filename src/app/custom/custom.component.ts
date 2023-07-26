@@ -10,17 +10,12 @@ import { Post } from '../Model/post';
 })
 export class CustomComponent {
   constructor(private service: PostsService) {}
-  getPosts() {
-    return this.service.getPosts();
-  }
-  modifyPosts() {
-    return this.service.getModifyPosts();
-  }
 
   @Input() status!: string;
   @Output() onChangeStatus = new EventEmitter();
 
   changestatus(status: string) {
+    console.log(status);
     this.onChangeStatus.emit(status);
     if (status === 'active') {
       this.status = 'inactive';

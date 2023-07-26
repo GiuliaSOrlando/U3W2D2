@@ -10,7 +10,7 @@
       }"
     >
       <p
-        class="bg-success text-white rounded-circle text-center"
+        class="bg-dark border border-1 border-white text-white rounded-circle text-center"
         style="width: 25px"
       >
         {{ post.id }}
@@ -31,7 +31,7 @@
         [src]="post.image"
         alt=""
       />
-      <app-custom></app-custom>
+      <app-custom [status]="post.status"></app-custom>
     </li>
   </ul>
 </body>

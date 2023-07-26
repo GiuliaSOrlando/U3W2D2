@@ -16,6 +16,5 @@ export class AppComponent implements OnInit {
       this.posts = this.service.posts;
     });
     this.posts = this.service.posts;
-    console.log(this.posts);
   }
 }
