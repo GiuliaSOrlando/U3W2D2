@@ -1,1 +1,22 @@
-<p>active-posts works!</p>
+<ul class="list-group">
+  <li
+    *ngFor="let post of posts"
+    class="list-group-item w-75 mx-auto border-primary border-3 rounded my-3"
+  >
+    <p
+      class="bg-primary text-white rounded-circle text-center"
+      style="width: 25px"
+    >
+      {{ post.id }}
+    </p>
+    <h4>{{ post.title }}</h4>
+    <p>
+      {{ post.body }}
+    </p>
+    <img
+      class="img-fluid border border-2 border-primary"
+      [src]="post.image"
+      alt=""
+    />
+  </li>
+</ul>
