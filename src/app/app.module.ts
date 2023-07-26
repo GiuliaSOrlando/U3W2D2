@@ -9,6 +9,7 @@ import { ActivePostsComponent } from './pages/active-posts/active-posts.componen
 import { NavComponent } from './components/nav/nav.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomComponent } from './custom/custom.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     ActivePostsComponent,
     NavComponent,
     Page404Component,
+    CustomComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

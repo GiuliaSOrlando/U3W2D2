@@ -1,22 +1,37 @@
-<ul class="list-group">
-  <li
-    *ngFor="let post of posts"
-    class="list-group-item w-75 mx-auto border-primary border-3 rounded my-3"
-  >
-    <p
-      class="bg-primary text-white rounded-circle text-center"
-      style="width: 25px"
+<body class="bg-success-subtle" style="height: fit-content">
+  <ul class="list-group">
+    <li
+      *ngFor="let post of posts"
+      class="list-group-item w-75 mx-auto border-white border-3 rounded my-3"
+      [ngClass]="{
+        'text-bg-warning': post.type === 'news',
+        'text-bg-dark': post.type === 'politic',
+        'text-bg-primary': post.type === 'education',
+      }"
     >
-      {{ post.id }}
-    </p>
-    <h4>{{ post.title }}</h4>
-    <p>
-      {{ post.body }}
-    </p>
-    <img
-      class="img-fluid border border-2 border-primary"
-      [src]="post.image"
-      alt=""
-    />
-  </li>
-</ul>
+      <p
+        class="bg-success text-white rounded-circle text-center"
+        style="width: 25px"
+      >
+        {{ post.id }}
+      </p>
+      <div class="d-flex justify-content-between">
+        <h4>
+          {{ post.title }}
+        </h4>
+        <span class="bg-success-subtle p-1 rounded text-success mb-1">{{
+          post.type
+        }}</span>
+      </div>
+      <p>
+        {{ post.body }}
+      </p>
+      <img
+        class="img-fluid border border-2 border-white"
+        [src]="post.image"
+        alt=""
+      />
+      <app-custom></app-custom>
+    </li>
+  </ul>
+</body>

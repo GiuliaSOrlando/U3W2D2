@@ -46,4 +46,27 @@ export class PostsService {
     this.posts = [];
     return this.activePosts;
   }
+
+  getModifyPosts() {
+    return fetch(this.url, {
+      headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+      body: JSON.stringify(this.posts),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error('errore');
+        }
+      })
+      .then((posts) => {
+        posts.forEach((singlepost: Post) => {
+          console.log(singlepost);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 }
