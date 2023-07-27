@@ -1,7 +1,8 @@
+import { ActivePostsComponent } from './../pages/active-posts/active-posts.component';
 import { Component, EventEmitter } from '@angular/core';
 import { Output, Input } from '@angular/core';
 import { PostsService } from '../posts.service';
-import { Post } from '../Model/post';
+import { Post } from 'src/app/Model/post';
 
 @Component({
   selector: 'app-custom',
@@ -12,15 +13,9 @@ export class CustomComponent {
   constructor(private service: PostsService) {}
 
   @Input() status!: string;
-  @Output() onChangeStatus = new EventEmitter();
+  @Input() id!: number;
 
-  changestatus(status: string) {
-    console.log(status);
-    this.onChangeStatus.emit(status);
-    if (status === 'active') {
-      this.status = 'inactive';
-    } else if (status === 'inactive') {
-      this.status = 'active';
-    }
+  changestatus(id: number) {
+    this.service.getModifyPosts(id);
   }
 }

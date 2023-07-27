@@ -47,26 +47,17 @@ export class PostsService {
     return this.activePosts;
   }
 
-  getModifyPosts() {
-    return fetch(this.url, {
+  getModifyPosts(id: number) {
+    // filter id-status
+    const found = this.posts.filter((post) => post.id === id)[0];
+    return fetch(this.url + '/' + id, {
       headers: { 'Content-Type': 'application/json' },
-      method: 'POST',
-      body: JSON.stringify(this.posts),
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          throw new Error('errore');
-        }
-      })
-      .then((posts) => {
-        posts.forEach((singlepost: Post) => {
-          console.log(singlepost);
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      method: 'PATCH',
+      body: JSON.stringify({
+        status: found.status === 'active' ? 'inactive' : 'active',
+      }),
+    }).catch((err) => {
+      console.log(err);
+    });
   }
 }

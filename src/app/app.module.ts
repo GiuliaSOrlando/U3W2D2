@@ -10,6 +10,9 @@ import { NavComponent } from './components/nav/nav.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomComponent } from './custom/custom.component';
+import { CapitalizePipe } from './capitalize.pipe';
+import { ColorchangeDirective } from './colorchange.directive';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { CustomComponent } from './custom/custom.component';
     NavComponent,
     Page404Component,
     CustomComponent,
+    CapitalizePipe,
+    ColorchangeDirective,
+    ModalComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

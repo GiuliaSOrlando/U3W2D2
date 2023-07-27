@@ -16,9 +16,10 @@
         {{ post.id }}
       </p>
       <div class="d-flex justify-content-between">
-        <h4>
-          {{ post.title }}
-        </h4>
+        <h3>
+          {{ post.title | capitalize }} •
+          <span appColorchange>{{ post.author }}</span>
+        </h3>
         <span class="bg-primary-subtle p-1 rounded text-primary mb-1">{{
           post.type
         }}</span>
@@ -31,7 +32,7 @@
         [src]="post.image"
         alt=""
       />
-      <app-custom [status]="post.status"></app-custom>
+      <app-custom [id]="post.id"></app-custom>
     </li>
   </ul>
 </body>
