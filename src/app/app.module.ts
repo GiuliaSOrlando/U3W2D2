@@ -14,6 +14,7 @@ import { CapitalizePipe } from './capitalize.pipe';
 import { ColorchangeDirective } from './colorchange.directive';
 import { ModalComponent } from './modal/modal.component';
 import { ModalButtonComponent } from './modal-button/modal-button.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { ModalButtonComponent } from './modal-button/modal-button.component';
     ModalComponent,
     ModalButtonComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
 })
