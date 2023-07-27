@@ -12,8 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomComponent } from './custom/custom.component';
 import { CapitalizePipe } from './capitalize.pipe';
 import { ColorchangeDirective } from './colorchange.directive';
-import { ModalComponent } from './modal/modal.component';
-import { ModalButtonComponent } from './modal-button/modal-button.component';
+import { NgbdModalComponent } from './modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -27,10 +26,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CustomComponent,
     CapitalizePipe,
     ColorchangeDirective,
-    ModalComponent,
-    ModalButtonComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    NgbdModalComponent,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

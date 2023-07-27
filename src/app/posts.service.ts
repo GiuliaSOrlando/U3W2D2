@@ -60,4 +60,12 @@ export class PostsService {
       console.log(err);
     });
   }
+
+  getSpecificPosts(id: number) {
+    // filter id-status
+    const found = this.posts.filter((post) => post.id === id)[0];
+    return fetch(this.url + '/' + id).catch((err) => {
+      console.log(err);
+    });
+  }
 }

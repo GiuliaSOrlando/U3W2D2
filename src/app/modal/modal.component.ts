@@ -1,3 +1,5 @@
+import { PostsService } from 'src/app/posts.service';
+import { Post } from './../Model/post';
 import { Component, Input } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -39,6 +41,8 @@ export class NgbdModalContent {
 })
 export class NgbdModalComponent {
   constructor(private modalService: NgbModal) {}
+
+  @Input() post!: Post;
 
   open() {
     const modalRef = this.modalService.open(NgbdModalContent);
