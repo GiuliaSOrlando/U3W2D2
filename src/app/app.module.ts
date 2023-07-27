@@ -13,6 +13,7 @@ import { CustomComponent } from './custom/custom.component';
 import { CapitalizePipe } from './capitalize.pipe';
 import { ColorchangeDirective } from './colorchange.directive';
 import { ModalComponent } from './modal/modal.component';
+import { ModalButtonComponent } from './modal-button/modal-button.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ModalComponent } from './modal/modal.component';
     CapitalizePipe,
     ColorchangeDirective,
     ModalComponent,
+    ModalButtonComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
